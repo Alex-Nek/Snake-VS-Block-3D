@@ -5,9 +5,12 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    public Game Game;
+    public void OnTriggerEnter(Collider other)
     {
-        if (!collision.collider.TryGetComponent(out SnakeMovment snake)) return;
-        snake.ReachFinish();
+        if (other.CompareTag("Player"))
+        {
+            Game.OnPlayerReachedFinish();
+        }
     }
 }
