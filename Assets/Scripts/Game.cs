@@ -17,18 +17,18 @@ public class Game : MonoBehaviour
 
     public void OnPlayerDied()
     {
-        //if (CurrentState != State.Playing) return;
+        if (CurrentState != State.Playing) return;
 
-        //CurrentState = State.Loss;
+        CurrentState = State.Loss;
         Controls.enabled = false;
         Debug.Log("Game over!");
     }
 
     public void OnPlayerReachedFinish()
     {
-       // if (CurrentState != State.Playing) return;
+        if (CurrentState != State.Playing) return;
 
-       // CurretnState = State.Won;
+        CurrentState = State.Won;
         Controls.enabled = false;
         Debug.Log("You won!");
     }
